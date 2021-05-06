@@ -8,7 +8,10 @@ const routes = [
   {
     path: '/',
     name: 'Pocetna',
-    component: () => import('../views/Pocetna.vue')
+    component: () => import('../views/Pocetna.vue'),
+    meta: {
+      hideNavbar: true,
+     }
   },
   {
     path: '/Home',

@@ -1,13 +1,17 @@
 <template>
-<body>
-  <div class="home">
+  <div class="row">
+  <div class="col-2"></div>
+  <div class="col-6">
+    ovdje ide vino
   </div>
-</body>
+  <div class="col-3">
+    desni stupac
+  </div>
+  </div>
 </template>
 
 
 <script>
-// @ is an alias to /src
 export default {
   name: 'Home',
   components: {
@@ -17,6 +21,7 @@ export default {
 
 <style>
 body {
-  background-color: #1d2327;
+  background-color: white;
 }
+
 </style>

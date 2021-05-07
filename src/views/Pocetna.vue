@@ -3,7 +3,9 @@
      <div class="pocetna">
          <h1>Ukoliko ste ljubitelj <br>kvalitetnih vina, na pravom <br>ste mjestu!</h1>
      <img alt="Logo vina" src="../assets/logovina.png"> <br>
-     <button>Pogledaj ponudu</button>  
+      <router-link to="/Home">
+     <button>Pogledaj ponudu</button>
+      </router-link>  
   </div>
 </body>
 </template>

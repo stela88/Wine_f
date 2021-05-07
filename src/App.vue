@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <div id="nav" >
+    <div id="nav">
       <router-link v-if="!$route.meta.hideNavbar" to="/Home">Home</router-link> |
-      <router-link v-if="!$route.meta.hideNavbar" to="/about">About</router-link>
+      <router-link v-if="!$route.meta.hideNavbar" to="/Kosarica">Košarica</router-link>
     </div >
     <router-view/>
   </div>

@@ -5,7 +5,8 @@
   <div class="row">
       
   <div class="col-6">
-    <img alt="Malvazija" src="../assets/malvazija.jpg" class="vino">
+     <router-link to="/Malvazija">Home
+    <img alt="Malvazija" src="../assets/malvazija.jpg" class="vino"> </router-link> 
     <p>Malvazija</p></div>
 
     <div class="col-6">

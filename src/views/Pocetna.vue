@@ -17,17 +17,26 @@ export default {
 </script>
 
 <style>
+
 body {
   background-color: #1d2327;
 }
 h1{
     color: aliceblue;
+    text-align: center;
     font-family:  "Times New Roman", Times, serif;;
 }
 img{
+   display: block;
+  margin-left: auto;
+  margin-right: auto;
     width:300px;
+    
 } 
 button{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   background-color: white;
   border-radius: 20px;
   border-color: white;

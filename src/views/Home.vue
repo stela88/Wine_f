@@ -1,34 +1,30 @@
 <template>
 <body>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <br>
   <div class="row">
-     <div class="col-2"></div>
       
-  <div class="col-4">
-    <img alt="Malvazija" src="../assets/malvazija.jpg" class="vino"><br>
-    <div class="text1">Malvazija</div></div>
+  <div class="col-6">
+    <img alt="Malvazija" src="../assets/malvazija.jpg" class="vino">
+    <p>Malvazija</p></div>
 
-    <div class="col-4">
-      <img alt="" src="../assets/chardonnay.jpg" class="vino"><br>
-    <div class="text1">Chardonnay</div></div>
+    <div class="col-6">
+      <img alt="Chardonnay" src="../assets/chardonnay.jpg" class="vino">
+    <p>Chardonnay</p></div>
 
-    <div class="col-2"></div>
  
   <div class="w-100"></div>
-      <div class="col-2"></div>
-      
-  <div class="col-4">
-    <br><br>
-    <img alt="Malvazija" src="../assets/rose.jpg" class="vino"><br>
-    <div class="text2">Rose</div></div>
     
-    <div class="col-4">
-      <br><br>
-      <img alt="" src="../assets/teran.jpg" class="vino"><br>
-    <div class="text2">Teran</div></div>
+  <div class="col-6">
+    <img alt="Rose" src="../assets/rose.jpg" class="vino">
+    <p>Rose</p></div>
+    
+    <div class="col-6">
 
+      <img alt="Teran" src="../assets/teran.jpg" class="vino">
+    <p>Teran</p></div>
 
-  <!-- <div class="col">col</div>
-  <div class="col">col</div> -->
+  
 </div>
 </body>
 </template>
@@ -46,22 +42,43 @@ export default {
 
 body {
   background-color:#1d2327;
+  padding: 30px;
 }
-.row{
-   margin-left: 120px;
+* {
+  box-sizing: border-box;
 }
-.text1{
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  position:absolute;
+  text-align: center;
   color: white;
-  padding-left: 90px; 
 }
-.text2{
-  color: white;
-  padding-left: 110px; 
+.col-6 img{
+  margin: auto;    
+  display: block;
+  flex: 25%;
+  padding: 20px;
+}
+
+@media screen and (max-width: 992px) {
+  .col-6 img {
+    flex: 50%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .row {
+    flex-direction: column;
+    position: center; 
+  }
+  p{
+    text-align: center;
+  }
 }
 .vino {
-    /* float: left; */
-    width:  250px;
-    height: 250px;
+    width:  300px;
+    height: auto;
     border-radius: 40px;
     object-fit: cover;
 }

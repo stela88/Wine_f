@@ -35,7 +35,7 @@
   box-sizing: border-box;
 }
 .row{
-  margin-right: 70px;
+  margin-right: 90px;
   display: flex;
   flex-wrap: wrap;
 }
@@ -74,12 +74,20 @@ h1{
   .col{
     flex: 50%;
   }
+  .h1{
+    flex: 50%
+  }
 }
 
 @media screen and (max-width: 600px) {
   .row {
     flex-direction: column;
     position: center; 
+    padding-right: 90px;
+  }
+  h1{
+    position: center;
+    padding-left:90px;
   }
 }
 </style>

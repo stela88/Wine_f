@@ -81,7 +81,7 @@ body {
 .vino {
     width:  300px;
     height: auto;
-    border-radius: 40px;
+    border-radius: 100px;
     object-fit: cover;
 }
 

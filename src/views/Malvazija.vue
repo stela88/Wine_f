@@ -1,16 +1,17 @@
 <template>
   <body>
+    <div class="malvazija1">
      <meta name="viewport" content="width=device-width, initial-scale=1">
     <div class="container px-4">
      <h1><img src="../assets/logo2.png" class="logo">MALVAZIJA</h1>
      <br>
-      <!-- <div class="dodaj">
-  <button>dodaj u košaricu</button>
-  <br> 
-  </div>-->
   <div class="row gx-5">
     <div class="col">
         <img alt="Malvazija" src="../assets/malvazija_crna.jpg" class="malvazija">
+        <br><br>
+         <router-link to="/Kosarica">
+     <button>Dodaj u košaricu</button>
+      </router-link> 
     </div>
     <div class="col border border-light">
       <div class = "text">
@@ -27,6 +28,7 @@
     </div>
   </div>
 </div>
+    </div>
   </body>
 </template>
 
@@ -69,6 +71,21 @@ h1{
   width: 50px;
   height: 50px;
 }
+button{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  border-radius: 20px;
+  border-color: white;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  font-size: 16px;
+  color: #b71c1c;
+  
+}
+
 
 @media screen and (max-width: 992px) {
   .col{

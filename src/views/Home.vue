@@ -5,7 +5,7 @@
   <div class="row">
       
   <div class="col-6">
-     <router-link to="/Malvazija">Home
+     <router-link to="/Malvazija">
     <img alt="Malvazija" src="../assets/malvazija.jpg" class="vino"> </router-link> 
     <p>Malvazija</p></div>
 
@@ -21,7 +21,6 @@
     <p>Rose</p></div>
     
     <div class="col-6">
-
       <img alt="Teran" src="../assets/teran.jpg" class="vino">
     <p>Teran</p></div>
 
@@ -44,6 +43,7 @@ export default {
 body {
   background-color:#1d2327;
   padding: 30px;
+  text-align: center;
 }
 * {
   box-sizing: border-box;
@@ -71,12 +71,13 @@ body {
 @media screen and (max-width: 600px) {
   .row {
     flex-direction: column;
-    position: center; 
+    padding-left: 50px; 
   }
   p{
-    text-align: center;
+    padding-left: 120px;
   }
 }
+
 .vino {
     width:  300px;
     height: auto;

@@ -1,10 +1,13 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link v-if="!$route.meta.hideNavbar" to="/Home">Home</router-link> |
-      <router-link v-if="!$route.meta.hideNavbar" to="/Kosarica">Košarica</router-link>
-    </div >
-    <router-view/>
+      <router-link v-if="!$route.meta.hideNavbar" to="/Home">Home</router-link>
+      |
+      <router-link v-if="!$route.meta.hideNavbar" to="/Kosarica"
+        >Košarica</router-link
+      >
+    </div>
+    <router-view />
   </div>
 </template>
 
@@ -12,17 +15,14 @@
 // Nadopuniti u datoteku "src/App.vue" iznad retka: this.cards = []
 // ...
 
-// fetch("http://localhost:3330/posts")
-//  .then(r => {
-//  return r.json()
-//  })
-//  then(data => {
-//  console.log("Podaci s backenda", data)
-//  })
+// fetch("http://localhost:3330/posts").then((r) => {
+//   return r.json();
+// });
+// then((data) => {
+//   console.log("Podaci s backenda", data);
+// });
 // stari kod, ne prepisivati, čisto za referencu
-
 </script>
-
 
 <style lang="scss">
 #app {
@@ -46,7 +46,3 @@
   }
 }
 </style>
-
-
-
-

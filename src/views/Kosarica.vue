@@ -57,5 +57,9 @@ p{
 h4{
   color:rgb(175, 175, 175);
 }
+h1{
+  color: aliceblue;
+  padding: 1px;
+}
 
 </style>

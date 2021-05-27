@@ -44,6 +44,7 @@
 .col{
   max-width: 90%;
   margin-right: 30px;
+  margin-bottom: 40px;
 }
 .text{
     padding-top: 10px;
@@ -83,6 +84,7 @@ button{
   text-align: center;
   font-size: 16px;
   color: #b71c1c;
+  margin-bottom: 40px;
   
 }
 

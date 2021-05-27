@@ -24,17 +24,77 @@
       <img alt="Teran" src="../assets/teran.jpg" class="vino">
     <p>Teran</p></div>
 
+    <div><home-card
+            v-for="(card, drac) in cards"
+            :key="drac"
+            :info="card"
+          /></div>
+
   
+
 </div>
 </body>
 </template>
 
 
 <script>
+import HomeCard from "../components/HomeCard.vue";
+
+let cards = [];
+
+cards = [
+  {
+    img: require("@/assets/malvazija.jpg"),
+    description: "Malvazija",
+    page: "/Malvazija",
+  },
+  {
+    img: require("@/assets/chardonnay.jpg"),
+    description: "Chardonnay",
+    page: "/Chardonnay",
+  },
+  // {
+  //   img: require("@/assets/cuganja.png"),
+  //   description: "Cuganja",
+  //   page: "/Cuganja",
+  // },
+  // {
+  //   img: require("@/assets/sportovi.jpg"),
+  //   description: "Sportovi",
+  //   page: "/Sportovi",
+  // },
+  // {
+  //   img: require("@/assets/online.jpg"),
+  //   description: "Online",
+  //   page: "/Online",
+  // },
+];
 export default {
   name: 'Home',
+  data(){
+    return{
+      cards,
+    }
+  },
+  mounted(){
+  fetch("http://localhost:3330/artikli")
+    .then(r => {
+     return r.json()
+    })
+    .then(data => {
+    console.log("Podaci s backenda", data)
+
+    let data2 = data.map(element => {
+      return {"novo": element}
+    })
+
+    console.log("novo", data2)
+   })
+  },
   components: {
+    HomeCard
   }
+  
 }
 </script>
 

@@ -1,18 +1,11 @@
 <template>
-  <div class="card">
-    <div class="card-body p-0">
-      <router-link :to="info.page">
-        <img class="card-img-top" :src="info.img" />
-      </router-link>
-    </div>
-     <div class="container">
-        <h4>
-          <p>{{ info.description }}</p>
-          <br />
-        </h4>
-      </div>
-  </div>
-  
+  <div class="homecard">
+    <router-link :to="info.page">
+    <img alt="homecard" :src="info.img" class="vino"> </router-link> 
+    <br><br>
+     <h4><p>{{ info.description }}</p></h4>
+     </div>
+
 </template>
 
 <script>
@@ -22,26 +15,4 @@ export default {
 };
 </script>
 
-<style>
-.card {
-  /* Add shadows to create the "card" effect */
-  background-color: black !important;
-  transition: 0.3s;
-  max-width: 750px;
-  left: 0;
-  right: 0;
-  margin: 0px auto 50px auto;
-}
-
-/* On mouse-over, add a deeper shadow */
-.card:hover {
-  box-shadow: 0 8px 16px 0 rgb(255, 255, 255);
-}
-
-/* Add some padding inside the card container */
-.container {
-  padding: 2px 16px;
-}
-
-</style>
 

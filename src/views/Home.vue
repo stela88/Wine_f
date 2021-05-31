@@ -2,37 +2,20 @@
 <body>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <br>
-  <div class="row">
-      
-  <div class="col-6">
-     <router-link to="/Malvazija">
-    <img alt="Malvazija" src="../assets/malvazija.jpg" class="vino"> </router-link> 
-    <p>Malvazija</p></div>
-
-    <div class="col-6">
-      <img alt="Chardonnay" src="../assets/chardonnay.jpg" class="vino">
-    <p>Chardonnay</p></div>
-
- 
-  <div class="w-100"></div>
-    
-  <div class="col-6">
-    <img alt="Rose" src="../assets/rose.jpg" class="vino">
-    <p>Rose</p></div>
-    
-    <div class="col-6">
-      <img alt="Teran" src="../assets/teran.jpg" class="vino">
-    <p>Teran</p></div>
-
-    <div><home-card
-            v-for="(card, drac) in cards"
+<div class="row">
+    <div class="col-6"><home-card
+            v-for="(card, drac) in cards1"
             :key="drac"
             :info="card"
           /></div>
 
-  
-
-</div>
+      <div class="col-6"><home-card
+            v-for="(card, drac) in cards2"
+            :key="drac"
+            :info="card"
+          /></div>
+          </div>
+         
 </body>
 </template>
 
@@ -40,40 +23,37 @@
 <script>
 import HomeCard from "../components/HomeCard.vue";
 
-let cards = [];
+let cards1 = [];
+let cards2 = [];
 
-cards = [
+cards1 = [
   {
     img: require("@/assets/malvazija.jpg"),
     description: "Malvazija",
     page: "/Malvazija",
   },
   {
+    img: require("@/assets/rose.jpg"),
+    description: "Rose",
+    page: "/Rose",
+  },   
+];
+
+cards2 = [
+   {
     img: require("@/assets/chardonnay.jpg"),
     description: "Chardonnay",
     page: "/Chardonnay",
   },
-  // {
-  //   img: require("@/assets/cuganja.png"),
-  //   description: "Cuganja",
-  //   page: "/Cuganja",
-  // },
-  // {
-  //   img: require("@/assets/sportovi.jpg"),
-  //   description: "Sportovi",
-  //   page: "/Sportovi",
-  // },
-  // {
-  //   img: require("@/assets/online.jpg"),
-  //   description: "Online",
-  //   page: "/Online",
-  // },
-];
+
+]
+
 export default {
   name: 'Home',
   data(){
     return{
-      cards,
+      cards1,
+      cards2
     }
   },
   mounted(){
@@ -104,22 +84,16 @@ body {
   background-color:#1d2327;
   padding: 30px;
   text-align: center;
+  position: center;
 }
 * {
   box-sizing: border-box;
 }
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  position:absolute;
+.homecard {
   text-align: center;
+  position: initial;
   color: white;
-}
-.col-6 img{
-  margin: auto;    
-  display: block;
-  flex: 25%;
-  padding: 20px;
+  padding-bottom: 50px;
 }
 
 @media screen and (max-width: 992px) {
@@ -129,7 +103,7 @@ body {
 }
 
 @media screen and (max-width: 600px) {
-  .row {
+  .homecard {
     flex-direction: column;
     padding-left: 50px; 
   }
@@ -139,10 +113,14 @@ body {
 }
 
 .vino {
-    width:  300px;
+    width: 350px;
     height: auto;
     border-radius: 100px;
     object-fit: cover;
+}
+
+.p{
+ margin-top: 200x;
 }
 
 

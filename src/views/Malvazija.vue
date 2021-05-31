@@ -88,6 +88,10 @@ button{
   
 }
 
+p{
+  color: white;
+}
+
 
 @media screen and (max-width: 992px) {
   .col{

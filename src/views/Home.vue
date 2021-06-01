@@ -36,15 +36,36 @@ cards1 = [
     img: require("@/assets/rose.jpg"),
     description: "Rose",
     page: "/Rose",
-  },   
+  }, 
+  {
+    img: require("@/assets/brut.jpg"),
+    description: "Brut",
+    page: "/Brut",
+  },
+  {
+    img: require("@/assets/merlot.jpg"),
+    description: "Merlot",
+    page: "/Merlot",
+  },  
 ];
 
 cards2 = [
-   {
+  {
     img: require("@/assets/chardonnay.jpg"),
     description: "Chardonnay",
     page: "/Chardonnay",
   },
+  {
+    img: require("@/assets/teran.jpg"),
+    description: "Teran",
+    page: "/Teran",
+  },
+  {
+    img: require("@/assets/cabernet_sauvignon.jpg"),
+    description: "Cabernet Sauvignon",
+    page: "/Cabernet_Sauvignon",
+  },
+  
 
 ]
 
@@ -78,8 +99,7 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss">
 body {
   background-color:#1d2327;
   padding: 30px;
@@ -97,18 +117,19 @@ body {
 }
 
 @media screen and (max-width: 992px) {
-  .col-6 img {
+  .col-6  {
     flex: 50%;
+    max-width: none;
   }
 }
 
 @media screen and (max-width: 600px) {
-  .homecard {
+  .row {
     flex-direction: column;
     padding-left: 50px; 
   }
-  p{
-    padding-left: 120px;
+  .homecard{
+   position:inherit;
   }
 }
 

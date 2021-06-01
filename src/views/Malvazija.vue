@@ -1,116 +1,47 @@
 <template>
-  <body>
-    <div class="malvazija1">
-     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <div class="container px-4">
-     <h1><img src="../assets/logo2.png" class="logo">MALVAZIJA</h1>
-     <br>
-  <div class="row gx-5">
-    <div class="col">
-        <img alt="Malvazija" src="../assets/malvazija_crna.jpg" class="malvazija">
-        <br><br>
-         <router-link to="/Kosarica">
-     <button>Dodaj u košaricu</button>
-      </router-link> 
-    </div>
-    <div class="col border border-light">
-      <div class = "text">
-        <p>Boja: bijelo</p>
-        <p>Temperatura posluživanja: 6-8 C</p>
-        <p>Cijena: 40 Kn</p>
-        <p>Opis: vino kompleksnih aroma; cvijeta akacije, limuna, zrele breskve i manga. Na nepcu je veoma svježe i mekano, elegantnog i trajnog okusa. Na retro okusu, prisutna blaga gorčina zelenog badema.</p>
-        <p>Najbolje poslužiti uz:
-        carpaccio od brancina sa limunom, rukolom, bijelim paprom i cvijetom soli, rižoto s kozicama i tikvicama, fritaja sa šparugama i pancetom</p>
-        </div>
-        <a href="https://cromaris.com/hr/recept/carpaccio-od-velikog-brancina/"> <img alt="1" src="../assets/jelo1_malvazija.jpg" class="jelo"></a>
-         <a href="https://www.coolinarika.com/recept/rizoto-s-tikvicama-i-kozicama-b9a0aafe-6446-11eb-9714-0242ac120062"> <img alt="2" src="../assets/jelo2_malvazija.jpg" class="jelo"></a>
-           <a href="https://www.coolinarika.com/recept/fritaja-sa-sparogama-90ee9558-6388-11eb-946d-0242ac12002d"><img alt="3" src="../assets/jelo3_malvazija.jpg" class="jelo"></a>
-    </div>
-  </div>
-</div>
-    </div>
-  </body>
+<body>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <br>
+<wine-card
+            v-for="(card, drac) in winecard"
+            :key="drac"
+            :info="card"
+          />
+         
+</body>    
 </template>
 
-<style>
-* {
-  box-sizing: border-box;
-}
-.row{
-  margin-right: 90px;
-  display: flex;
-  flex-wrap: wrap;
-}
-.col{
-  max-width: 90%;
-  margin-right: 30px;
-  margin-bottom: 40px;
-}
-.text{
-    padding-top: 10px;
-    text-align: left;  
-}
-.jelo {
-  padding: 5px;
-    width:  170px;
-    height: 170px;
-    border-radius: 20px;
-    object-fit: cover;
-}
-.malvazija{
-  width:350px;
-  border-radius: 20px;
-}
-p{
-  padding: 3px;
-}
-h1{
-  color: aliceblue;
-  padding: 1px;
-}
-.logo{
-  width: 50px;
-  height: 50px;
-}
-button{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: white;
-  border-radius: 20px;
-  border-color: white;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  font-size: 16px;
-  color: #b71c1c;
-  margin-bottom: 40px;
-  
-}
 
-p{
-  color: white;
-}
+<script>
+import WineCard from "../components/WineCard.vue";
 
+let winecard = [];
 
-@media screen and (max-width: 992px) {
-  .col{
-    flex: 50%;
-  }
-  .h1{
-    flex: 50%
+winecard = [
+  {
+    logo: require("@/assets/logo2.png"),
+    ime: "MALVAZIJA",
+    slika: require("@/assets/malvazija_crna.jpg"),
+    boja: "bijelo",
+    temp: "6-8 C",
+    cijena: "40 Kn",
+    opis: "vino kompleksnih aroma; cvijeta akacije, limuna, zrele breskve i manga. Na nepcu je veoma svježe i mekano, elegantnog i trajnog okusa. Na retro okusu, prisutna blaga gorčina zelenog badema.",
+    posluzi: "carpaccio od brancina sa limunom, rukolom, bijelim paprom i cvijetom soli, rižoto s kozicama i tikvicama, fritaja sa šparugama i pancetom",
+    jelo1: require("@/assets/jelo1_malvazija.jpg"),
+    jelo2: require("@/assets/jelo2_malvazija.jpg"),
+    jelo3: require("@/assets/jelo3_malvazija.jpg"),
+  },
+]
+
+export default {
+  name: "Malvazija",
+  data(){
+    return{
+      winecard,
+    }
+  },
+  components: {
+    WineCard
   }
 }
-
-@media screen and (max-width: 600px) {
-  .row {
-    flex-direction: column;
-    position: center; 
-    padding-right: 90px;
-  }
-  h1{
-    position: center;
-    padding-left:90px;
-  }
-}
-</style>
+</script>

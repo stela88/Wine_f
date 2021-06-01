@@ -20,9 +20,9 @@
         <p>Najbolje poslužiti uz:
         {{info.posluzi}}</p>
         </div>
-        <a href="https://cromaris.com/hr/recept/carpaccio-od-velikog-brancina/"> <img :src="info.jelo1" class="jelo"></a>
-         <a href="https://www.coolinarika.com/recept/rizoto-s-tikvicama-i-kozicama-b9a0aafe-6446-11eb-9714-0242ac120062"> <img :src="info.jelo2" class="jelo"></a>
-           <a href="https://www.coolinarika.com/recept/fritaja-sa-sparogama-90ee9558-6388-11eb-946d-0242ac12002d"><img  :src="info.jelo3" class="jelo"></a>
+        <a :href="info.link1" target="_blank"> <img :src="info.jelo1" class="jelo"></a>
+         <a :href="info.link2" target="_blank"> <img :src="info.jelo2" class="jelo"></a>
+           <a :href="info.link3" target="_blank"><img  :src="info.jelo3" class="jelo"></a>
     </div>
   </div>
 </div>
@@ -59,8 +59,8 @@ max-width: 800px
 }
 .jelo {
     padding: 5px;
-    width:  170px;
-    height: 170px;
+    width:  190px;
+    height: 190px;
     border-radius: 20px;
     object-fit: cover;
 }
@@ -95,6 +95,9 @@ button{
   
 }
 
+a:visited{
+  color: white
+}
 
 p{
   color: white;

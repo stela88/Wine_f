@@ -33,7 +33,55 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/Malvazija.vue')
-  }
+  },
+  {
+    path: '/Chardonnay',
+    name: 'Chardonnay',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/Chardonnay.vue')
+  },
+  {
+    path: '/Rose',
+    name: 'Rose',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/Rose.vue')
+  },
+  {
+    path: '/Teran',
+    name: 'Teran',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/Teran.vue')
+  },
+  {
+    path: '/Brut',
+    name: 'Brut',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/Brut.vue')
+  },
+  {
+    path: '/Cabernet_Sauvignon',
+    name: 'Cabernet_Sauvignon',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/Cabernet_Sauvignon.vue')
+  },
+  {
+    path: '/Merlot',
+    name: 'Merlot',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/Merlot.vue')
+  },
 ]
 
 const router = new VueRouter({

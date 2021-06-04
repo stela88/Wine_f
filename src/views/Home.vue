@@ -2,15 +2,17 @@
 <body>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <br>
-<div class="row">
-    <div class="col-6"><home-card
+  <div>
+<home-card
             v-for="(card, drac) in cards1"
             :key="drac"
-            :info="card"
-          /></div>
+            :info="card" 
+            :info1="card"
+          />
+        
 
       <div class="col-6"><home-card
-            v-for="(card, drac) in cards2"
+            v-for="(card, drac) in cards1"
             :key="drac"
             :info="card"
           /></div>
@@ -22,76 +24,104 @@
 
 <script>
 import HomeCard from "../components/HomeCard.vue";
+//import { HomeCard } from "@/services";      --iz service/index.js
 
-let cards1 = [];
-let cards2 = [];
 
-cards1 = [
-  {
-    img: require("@/assets/malvazija.jpg"),
-    description: "Malvazija",
-    page: "/Malvazija",
-  },
-  {
-    img: require("@/assets/rose.jpg"),
-    description: "Rose",
-    page: "/Rose",
-  }, 
-  {
-    img: require("@/assets/brut.jpg"),
-    description: "Brut",
-    page: "/Brut",
-  },
-  {
-    img: require("@/assets/merlot.jpg"),
-    description: "Merlot",
-    page: "/Merlot",
-  },  
-];
 
-cards2 = [
-  {
-    img: require("@/assets/chardonnay.jpg"),
-    description: "Chardonnay",
-    page: "/Chardonnay",
-  },
-  {
-    img: require("@/assets/teran.jpg"),
-    description: "Teran",
-    page: "/Teran",
-  },
-  {
-    img: require("@/assets/cabernet_sauvignon.jpg"),
-    description: "Cabernet Sauvignon",
-    page: "/Cabernet_Sauvignon",
-  },
+// let cards2 = [];
+
+// cards1 = [
+//   {
+//     img: require("@/assets/malvazija.jpg"),
+//     description: "Malvazija",
+//     page: "/Malvazija",
+//   },
+//   {
+//     img: require("@/assets/rose.jpg"),
+//     description: "Rose",
+//     page: "/Rose",
+//   }, 
+//   {
+//     img: require("@/assets/brut.jpg"),
+//     description: "Brut",
+//     page: "/Brut",
+//   },
+//   {
+//     img: require("@/assets/merlot.jpg"),
+//     description: "Merlot",
+//     page: "/Merlot",
+//   },  
+// ];
+
+// cards2 = [
+//   {
+//     img: require("@/assets/chardonnay.jpg"),
+//     description: "Chardonnay",
+//     page: "/Chardonnay",
+//   },
+//   {
+//     img: require("@/assets/teran.jpg"),
+//     description: "Teran",
+//     page: "/Teran",
+//   },
+//   {
+//     img: require("@/assets/cabernet_sauvignon.jpg"),
+//     description: "Cabernet Sauvignon",
+//     page: "/Cabernet_Sauvignon",
+//   },
   
 
-]
+//]
 
 export default {
   name: 'Home',
   data(){
     return{
-      cards1,
-      cards2
+      cards1: [],
     }
   },
-  mounted(){
-  fetch("http://localhost:3330/artikli")
+mounted(){
+
+    
+fetch("http://localhost:3330/pocetna1")
     .then(r => {
      return r.json()
     })
     .then(data => {
     console.log("Podaci s backenda", data)
 
-    let data2 = data.map(element => {
-      return {"novo": element}
+    this.cards1 = data.map(element => {
+      return {
+        img: element.slika,
+        description: element.ime,
+        page: element.stranica,
+      }
     })
 
-    console.log("novo", data2)
+  
    })
-  },
+
+},
+
+
+// fetch("http://localhost:3330/pocetna2")
+//     .then(p => {
+//      return p.json()
+//     })
+//     .then(data => {
+//     console.log("Podaci s backenda", data)
+
+//     this.cards2 = data.map(element => {
+//       return {
+//         img: element.slika,
+//         description: element.ime,
+//         page: element.stranica
+//       }
+//     })
+//    })
+   
+
+  
   components: {
     HomeCard
   }

@@ -1,11 +1,15 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link v-if="!$route.meta.hideNavbar" to="/Home">Home</router-link>
+    <div id="nav" class="navbar border-bottom">
+      <img src="@/assets/white.png" class="nav_vino" />
+      <router-link v-if="!$route.meta.hideNavbar" to="/Home">
+        <p class="navbar_option">Home</p>
+      </router-link>
       |
-      <router-link v-if="!$route.meta.hideNavbar" to="/Kosarica"
-        >Košarica</router-link
-      >
+      <router-link v-if="!$route.meta.hideNavbar" to="/Kosarica">
+        <p class="navbar_option">Košarica</p>
+      </router-link>
+      <img src="@/assets/red.png" class="nav_vino" />
     </div>
     <router-view />
   </div>
@@ -35,14 +39,16 @@
 
 #nav {
   padding: 30px;
-
-  a {
+  p {
     font-weight: bold;
-    color: #2c3e50;
+    color: #960b29;
 
     &.router-link-exact-active {
-      color: #42b983;
+      color: #2c3e50;
     }
+  }
+  .nav_vino {
+    width: 10%;
   }
 }
 </style>

@@ -43,7 +43,7 @@ export default {
     //     })
     // })
 
-    fetch("http://localhost:3330/pocetna")
+    fetch("http://localhost:3330/posts")
       .then((r) => {
         return r.json();
       })
@@ -59,7 +59,6 @@ export default {
         });
       });
   },
-
   components: {
     HomeCard,
   },

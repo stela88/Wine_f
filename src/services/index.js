@@ -9,17 +9,19 @@ let Service = axios.create({
 
 // vezani uz pojedine rute
 let HomeCard = {
-    getAll(){
-       return Service.get('/pocetna1')
+    getAll() {
+        return Service.get('/posts')
     }
 }
 
-// let HomeCard = {
-//     getAll(){
-//        return Service.get('/pocetna2')
-//     }
-// }
-
-
+// let r = await Service.get('/posts', options);
+// return r.data.map(doc => {
+//     return {
+//         id: doc._id,
+//         img: doc.slika,
+//         description: doc.ime,
+//         page: doc.stranica,
+//     };
+// })
 
 export { Service, HomeCard }

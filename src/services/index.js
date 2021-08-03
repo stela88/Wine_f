@@ -8,20 +8,38 @@ let Service = axios.create({
 
 
 // vezani uz pojedine rute
-let HomeCard = {
-    getAll() {
-        return Service.get('/posts')
-    }
+let Posts = {
+    add(post){
+        return Service.post('/posts', post);
+    },
+
+    async getOne(){
+        let response = await Service.get (`/posts/${id}`)
+        let doc = response.data;
+        return {
+            img: doc.slika,
+            description: doc.ime,
+            page: doc.stranica,
+        };
+
+    },
+    
+    async getAll() {
+        let response = await Service.get('/posts');
+        return response.data.map(doc => {
+        return {
+            id: doc._id,
+            img: doc.slika,
+            description: doc.ime,
+            page: doc.stranica,
+        };
+    
+    });
+}
+    
 }
 
-// let r = await Service.get('/posts', options);
-// return r.data.map(doc => {
-//     return {
-//         id: doc._id,
-//         img: doc.slika,
-//         description: doc.ime,
-//         page: doc.stranica,
-//     };
-// })
 
-export { Service, HomeCard }
+
+
+export { Service, Posts }

@@ -2,7 +2,8 @@
   <body>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <br />
-    <div class="d-flex justify-content-around">
+    
+    <div>
       <home-card
         class="p-2"
         v-for="(card, drac) in cards"
@@ -16,7 +17,7 @@
 
 <script>
 import HomeCard from "../components/HomeCard.vue";
-//import { HomeCard } from "@/services";
+import { Posts } from "@/services";
 //--iz service/index.js
 
 let cards = [];
@@ -28,7 +29,7 @@ export default {
       cards,
     };
   },
-  mounted() {
+  async mounted() {
     // HomeCard.getAll()
     // .then(response => {
     //   let data = response.data
@@ -42,6 +43,11 @@ export default {
     //       }
     //     })
     // })
+
+
+//trenutno ne radi ali ovo je dohvat prema idu
+    //console.log(this.id);
+    //this.cards = await Posts.getOne(this.id);
 
     fetch("http://localhost:3330/posts")
       .then((r) => {

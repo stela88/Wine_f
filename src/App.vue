@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div id="nav" class="navbar">
-      <img src="@/assets/white.png" class="nav_vino" />
+      <img src="@/assets/white.png" class="nav_vino" v-if="!$route.meta.hideNavbar" />
       <router-link v-if="!$route.meta.hideNavbar" to="/Home">
         <p class="navbar_option">Home</p>
       </router-link>
@@ -11,7 +11,7 @@
       <router-link v-if="!$route.meta.hideNavbar" to="/Kosarica">
         <p class="navbar_option">Košarica</p>
       </router-link>
-      <img src="@/assets/red.png" class="nav_vino" />
+      <img src="@/assets/red.png" class="nav_vino" v-if="!$route.meta.hideNavbar" />
     </div>
     <router-view />
     <br>

@@ -45,7 +45,7 @@ export default {
     // })
 
 
-//trenutno ne radi ali ovo je dohvat prema idu
+//trenutno ne radi ali ovo je dohvat prema id-u
     //console.log(this.id);
     //this.cards = await Posts.getOne(this.id);
 

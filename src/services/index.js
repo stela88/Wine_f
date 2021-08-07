@@ -39,7 +39,34 @@ let Posts = {
     
 }
 
+let Malvazija = {
+    add(malvazija){
+        return Service.post('/malvazija', malvazija);
+    },
+
+    async getOne(){
+        let response = await Service.get ('malvazija')
+        let doc = response.data;
+        return {
+            logo: doc.logo,
+            ime: doc.name,
+            slika: doc.img,
+            boja: doc.color,
+            temp: doc.temp,
+            cijena: doc.price,
+            opis: doc.about,
+            posluzi: doc.serve,
+            jelo1: doc.meal1,
+            jelo2: doc.meal2,
+            jelo3: doc.meal3,
+            link1: doc.link1,
+            link2: doc.link2,
+            link3: doc.link3
+        };
+
+    },
+}
 
 
 
-export { Service, Posts }
+export { Service, Posts, Malvazija}

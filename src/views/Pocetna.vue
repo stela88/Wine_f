@@ -3,9 +3,9 @@
      <div class="pocetna">
          <h1>Ukoliko ste ljubitelj <br>kvalitetnih vina, na pravom <br>ste mjestu!</h1>
      <img alt="Logo vina" src="../assets/logovina.png"> <br>
-      <router-link to="/Home">
-     <button>Pogledaj ponudu</button>
-      </router-link>  
+      <button><router-link to="/Home" class="link">
+     Pogledaj ponudu
+      </router-link></button> 
   </div>
 </body>
 </template>
@@ -16,7 +16,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 
 body {
   background-color: #1d2327;
@@ -30,11 +30,9 @@ img{
    display: block;
   margin-left: auto;
   margin-right: auto;
-    width:300px;
-    
-} 
+    width:300px;   
+}
 button{
-  display: block;
   margin-left: auto;
   margin-right: auto;
   background-color: white;
@@ -43,9 +41,11 @@ button{
   color: white;
   padding: 15px 32px;
   text-align: center;
+}
+a.link{
   font-size: 16px;
   color: #b71c1c;
-  
+  text-decoration: none;
 }
 
 

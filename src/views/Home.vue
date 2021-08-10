@@ -30,25 +30,11 @@ export default {
     };
   },
   async mounted() {
-    // HomeCard.getAll()
-    // .then(response => {
-    //   let data = response.data
-    //   console.log("Podaci s backenda", data)
-
-    //     this.cards1 = data.map(element => {
-    //       return {
-    //         img: element.slika,
-    //         description: element.ime,
-    //         page: element.stranica
-    //       }
-    //     })
-    // })
-
 
 //trenutno ne radi ali ovo je dohvat prema id-u
     //console.log(this.id);
     //this.cards = await Posts.getOne(this.id);
-
+    
     fetch("http://localhost:3330/posts")
       .then((r) => {
         return r.json();
@@ -65,6 +51,7 @@ export default {
         });
       });
   },
+
   components: {
     HomeCard,
   },

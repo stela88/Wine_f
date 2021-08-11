@@ -17,25 +17,6 @@ import WineCard from "../components/WineCard.vue";
 
 let winecard = [];
 
-winecard = [
-  {
-    logo: require("@/assets/logo2.png"),
-    ime: "TERAN",
-    slika: require("@/assets/teran_crna.jpg"),
-    boja: "crno",
-    temp: "16-18 C",
-    cijena: "40 Kn",
-    opis: "Vino je bistro, duboke rubin crvene boje, živahnih refleksija i prilično je gusto. Finih i izraženih mirisa crvene ruže, višnje, šljive i borovnice. Svježe, baršunasto mekano, ukusno i trajno na nepcu.",
-    posluzi: "Istarski pršut, tuna steak ili domaće kobasice na žaru.",
-    jelo1: require("@/assets/jelo1_teran.jpg"),
-    jelo2: require("@/assets/jelo2_teran.jpg"),
-    jelo3: require("@/assets/jelo3_teran.jpg"),
-    link1: "https://gastro.24sata.hr/spajza/znanstvenici-o-kakvoci-istarskih-drniskih-i-dalmatinskih-prsuta-10921",
-    link2: "https://gastro.24sata.hr/trikovi-za-savrsen-tuna-steak-9021",
-    link3: "https://www.jutarnji.hr/dobrahrana/price/kobaje-na-rostilju-evo-kako-rostiljati-omiljene-debeljuce-4070343",
-  },
-]
-
 export default {
   name: "Teran",
   data(){
@@ -43,6 +24,34 @@ export default {
       winecard,
     }
   },
+  async mounted() {
+    fetch("http://localhost:3330/teran")
+      .then((r) => {
+        return r.json();
+      })
+      .then((data) => {
+        console.log("Podaci s backenda, teran", data);
+
+        this.winecard = data.map((element) => {
+          return {
+            logo: element.logo,
+            ime: element.name,
+            slika: element.img,
+            boja: element.color,
+            temp: element.temp,
+            cijena: element.price,
+            opis: element.about,
+            posluzi: element.serve,
+            jelo1: element.meal1,
+            jelo2: element.meal2,
+            jelo3: element.meal3,
+            link1: element.link1,
+            link2: element.link2,
+            link3: element.link3
+          };
+        });
+      });
+   },
   components: {
     WineCard
   }

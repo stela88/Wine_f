@@ -20,33 +20,18 @@
 </template>
 
 <script>
-// Nadopuniti u datoteku "src/App.vue" iznad retka: this.cards = []
-// ...
 
-// fetch("http://localhost:3330/posts").then((r) => {
-//   return r.json();
-// });
-// then((data) => {
-//   console.log("Podaci s backenda", data);
-// });
-// stari kod, ne prepisivati, čisto za referencu
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
 
 #nav {
   padding: 30px;
   p {
     font-weight: bold;
-    color: #960b29;
-
+    font-size: 22px;
+    color: rgb(228, 188, 188);
+    text-decoration: none;
     &.router-link-exact-active {
       color: #2c3e50;
     }
@@ -54,5 +39,11 @@
   .nav_vino {
     width: 10%;
   }
+  a{
+  text-decoration: none;
+  }
+  
 }
+
+
 </style>

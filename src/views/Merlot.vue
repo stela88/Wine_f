@@ -24,6 +24,34 @@ export default {
       winecard,
     }
   },
+  async mounted() {
+    fetch("http://localhost:3330/merlot")
+      .then((r) => {
+        return r.json();
+      })
+      .then((data) => {
+        console.log("Podaci s backenda, merlot", data);
+
+        this.winecard = data.map((element) => {
+          return {
+            logo: element.logo,
+            ime: element.name,
+            slika: element.img,
+            boja: element.color,
+            temp: element.temp,
+            cijena: element.price,
+            opis: element.about,
+            posluzi: element.serve,
+            jelo1: element.meal1,
+            jelo2: element.meal2,
+            jelo3: element.meal3,
+            link1: element.link1,
+            link2: element.link2,
+            link3: element.link3
+          };
+        });
+      });
+  },
   components: {
     WineCard
   }

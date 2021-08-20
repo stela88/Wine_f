@@ -60,7 +60,7 @@ export default {
 
 <style lang="scss">
 body {
-  background-color: #1d2327;
+  background-color: #080808;
   padding: 30px;
   text-align: center;
   position: center;

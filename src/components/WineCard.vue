@@ -75,6 +75,9 @@ p {
 h1 {
   color: aliceblue;
   padding: 1px;
+  margin-top: -70px;
+  margin-bottom: 30px;
+  margin-left: -30px;
 }
 .logo {
   width: 50px;

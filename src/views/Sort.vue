@@ -1,9 +1,9 @@
 <template>
     <div>
         <p class="main">Sortiraj po boji</p>
-        <button type="button" class="btn btn-dark" @click="goToBijelo()" ><p>bijelo</p></button><br>
-        <button type="button" class="btn btn-dark" @click="goToCrno()" ><p>crno</p></button><br>
-        <button type="button" class="btn btn-dark"><p>rose</p></button><br><br>
+        <button type="button" class="btn btn-dark" @click="goToBijelo()"><p>bijelo</p></button><br>
+        <button type="button" class="btn btn-dark" @click="goToCrno()"><p>crno</p></button><br>
+        <button type="button" class="btn btn-dark" @click="goToRose()"><p>rose</p></button><br><br>
 
         <p class="main">Sortiraj po temperaturi</p>
         <button type="button" class="btn btn-dark"><p>5-7 C</p></button><br>
@@ -21,8 +21,13 @@ export default {
    goToBijelo(){
    this.$router.push('/Bijelo'); 
    },
+
    goToCrno(){
    this.$router.push('/Crno'); 
+   },
+
+   goToRose(){
+   this.$router.push('/RoseSort'); 
    }
   }
 }
@@ -43,7 +48,7 @@ p{
 button{
     text-emphasis-color: white;
     width: 70%;
-    background-color: #1d2327;
+    background-color:#080808;
     box-decoration-break:slice;
 }
 

@@ -1,6 +1,6 @@
 <template>
   <div class="kosarica">
-     <h1><img src="../assets/logo2.png" class="logo">KOŠARICA</h1>
+     <h1><img src="../assets/logo.png" class="logo">KOŠARICA</h1>
       <br><br><br>
      <router-link to="/Malvazija">
     <img alt="Malvazija" src="../assets/malvazija.jpg" class="vino_u_kosarici"> </router-link> 

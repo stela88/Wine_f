@@ -122,6 +122,14 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/Temp5-7.vue')
   },
+  {
+    path: '/Temp6-8',
+    name: 'Temp6-8',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/Temp6-8.vue')
+  },
 ]
 
 const router = new VueRouter({

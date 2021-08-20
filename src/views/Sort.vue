@@ -1,7 +1,7 @@
 <template>
     <div>
         <p class="main">Sortiraj po boji</p>
-        <button type="button" class="btn btn-dark"><p>bijelo</p></button><br>
+        <button type="button" class="btn btn-dark" onclick: bijelovino><p>bijelo</p></button><br>
         <button type="button" class="btn btn-dark"><p>crno</p></button><br>
         <button type="button" class="btn btn-dark"><p>rose</p></button><br><br>
 
@@ -40,7 +40,7 @@ import { Posts } from "@/services";
 let cards = [];
 
 export default {
-  name: "Home",
+  name: "Sort",
   data() {
     return {
       cards,
@@ -51,25 +51,27 @@ export default {
 //trenutno ne radi ali ovo je dohvat prema id-u
     //console.log(this.id);
     //this.cards = await Posts.getOne(this.id);
-//   var bijelovino;
+  var bijelovino=
 
-//         fetch("http://localhost:3330/posts/bijelo")
-//           .then((r) => {
-//             return r.json();
-//           })
-//           .then((data=bijelovino) =>{
-//             console.log("Podaci s backenda", data);
+        fetch("http://localhost:3330/posts/bijelo")
+          .then((r) => {
+            return r.json();
+          })
+          .then((data) =>{
+            console.log("Podaci s backenda, bijelo vino", data);
 
-//             this.cards=data.map((element) => {
-//               return {
-//                 img: element.slika,
-//                 description: element.ime,
-//                 page: element.stranica,
-//                 color: element.boja
-//               };
-//             });
-//           });
+            this.cards=data.map((element) => {
+              return {
+                img: element.slika,
+                description: element.ime,
+                page: element.stranica,
+                color: element.boja
+              };
+            });
+          });
+  console.log("bijelo vino", bijelovino)
   },
+  
 
   components: {
     HomeCard,

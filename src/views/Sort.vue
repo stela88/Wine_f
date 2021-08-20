@@ -8,7 +8,7 @@
         <p class="main">Sortiraj po temperaturi</p>
         <button type="button" class="btn btn-dark" @click="goToTemp1()"><p>5-7 C</p></button><br>
         <button type="button" class="btn btn-dark" @click="goToTemp2()"><p>6-8 C</p></button><br>
-        <button type="button" class="btn btn-dark"><p>16-18 C</p></button>
+        <button type="button" class="btn btn-dark" @click="goToTemp3()"><p>16-18 C</p></button>
     </div>
 </template>
 
@@ -36,6 +36,10 @@ export default {
 
    goToTemp2(){
    this.$router.push('/Temp6-8'); 
+   },
+
+   goToTemp3(){
+   this.$router.push('/Temp16-18'); 
    }
   }
 }

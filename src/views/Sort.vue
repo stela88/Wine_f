@@ -1,7 +1,7 @@
 <template>
     <div>
         <p class="main">Sortiraj po boji</p>
-        <button type="button" class="btn btn-dark" onclick: bijelovino><p>bijelo</p></button><br>
+        <button type="button" class="btn btn-dark" onclick=/Bijelo ><p>bijelo</p></button><br>
         <button type="button" class="btn btn-dark"><p>crno</p></button><br>
         <button type="button" class="btn btn-dark"><p>rose</p></button><br><br>
 
@@ -32,49 +32,3 @@ button{
 
 </style>
 
-<script>
-import HomeCard from "../components/HomeCard.vue";
-import { Posts } from "@/services";
-//--iz service/index.js
-
-let cards = [];
-
-export default {
-  name: "Sort",
-  data() {
-    return {
-      cards,
-    };
-  },
-  async mounted() {
-
-//trenutno ne radi ali ovo je dohvat prema id-u
-    //console.log(this.id);
-    //this.cards = await Posts.getOne(this.id);
-  var bijelovino=
-
-        fetch("http://localhost:3330/posts/bijelo")
-          .then((r) => {
-            return r.json();
-          })
-          .then((data) =>{
-            console.log("Podaci s backenda, bijelo vino", data);
-
-            this.cards=data.map((element) => {
-              return {
-                img: element.slika,
-                description: element.ime,
-                page: element.stranica,
-                color: element.boja
-              };
-            });
-          });
-  console.log("bijelo vino", bijelovino)
-  },
-  
-
-  components: {
-    HomeCard,
-  },
-};
-</script>

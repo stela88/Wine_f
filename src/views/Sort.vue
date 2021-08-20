@@ -1,8 +1,8 @@
 <template>
     <div>
         <p class="main">Sortiraj po boji</p>
-        <button type="button" class="btn btn-dark" onclick=/Bijelo ><p>bijelo</p></button><br>
-        <button type="button" class="btn btn-dark"><p>crno</p></button><br>
+        <button type="button" class="btn btn-dark" @click="goToBijelo()" ><p>bijelo</p></button><br>
+        <button type="button" class="btn btn-dark" @click="goToCrno()" ><p>crno</p></button><br>
         <button type="button" class="btn btn-dark"><p>rose</p></button><br><br>
 
         <p class="main">Sortiraj po temperaturi</p>
@@ -11,6 +11,23 @@
         <button type="button" class="btn btn-dark"><p>16-18 C</p></button>
     </div>
 </template>
+
+
+<script>
+export default {
+  name: "Sort",
+
+  methods:{
+   goToBijelo(){
+   this.$router.push('/Bijelo'); 
+   },
+   goToCrno(){
+   this.$router.push('/Crno'); 
+   }
+  }
+}
+</script>
+
 
 <style scoped>
 .main{

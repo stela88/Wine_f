@@ -6,9 +6,52 @@
       <div class="col">
         <img :src="info.slika" class="wine" />
         <br /><br />
-        <router-link to="/Kosarica">
-          <button>Dodaj u košaricu</button>
-        </router-link>
+        <form @submit.stop.prevent="submit">
+            <div class="form-row">
+              <div class="form-group col-md-12" id="kolicina">
+                <label for="kolicina"><strong>Količina</strong></label>
+                <input
+                  name="kolicina"
+                  class="form-control"
+                  type="number"
+                  placeholder="Količina"
+                  v-model="kolicina"
+                  v-bind:class="{
+                    'form-control': true,
+                    'is-invalid': !validKolicina(kolicina) && blured,
+                  }"
+                  v-on:blur="blured = true"
+                />
+                <div class="invalid-feedback">
+                  <i class="fas fa-info-circle"></i> Unesite vrijednost između 1
+                  butelje i 20 butelja vina.
+                </div>
+              </div>
+            </div>
+            <div class="buy justify-content-center">
+              <button
+                type="submit"
+                href="#"
+                class="btn btn-secondary mt-4 btn-sm mr-1 mb-2"
+                v-bind:class="{
+                  'form-control': true,
+                  'is-valid': dodano && !neuspjeh,
+                  'is-invalid': neuspjeh,
+                }"
+                v-on:blur="valid = false"
+              >
+                <i class="fas fa-shopping-cart"></i> Dodavanje u košaricu
+              </button>
+              <div class="valid-feedback">
+                <i class="fas fa-info-circle"></i> Uspješno ste dodali narudžbu
+                u košaricu!
+              </div>
+              <div class="invalid-feedback">
+                <i class="fas fa-info-circle"></i> Ne možete staviti istu vrstu
+                vina više puta dodati u košaricu!
+              </div>
+            </div>
+          </form>
       </div>
       <div class="col border-left">
         <div class="text">
@@ -33,11 +76,69 @@
 </template>
 
 <script>
+import store from "@/store";
+
 export default {
-  props: ["info"],
   name: "WineCard",
+  data() {
+    return {
+      kolicina: "",
+      blured: false,
+      dodano: false,
+      neuspjeh: false,
+    };
+  },
+  props: ["info"],
+
+  methods: {
+    idPostoji(ime) {
+      return store.addingToCart.some(function(el) {
+        return el.ime === ime;
+      });
+    },
+    addingToCart() {
+      console.log(this.info.ime);
+      if (!this.idPostoji(this.info.ime)) {
+        let addingItem = {};
+        addingItem = {
+          kolicina: this.kolicina,
+          cijena: 40 * this.kolicina,
+          naslov: this.info.naslov,
+          podnaslov: this.info.podnaslov,
+          ime: this.info.ime,
+          slika: this.info.slika,
+          glavniID: Math.random(),
+        };
+        console.log("Item added");
+        store.addingToCart.push(addingItem);
+        store.cartNumber += 1;
+        store.konacnaCijena += addingItem.cijena;
+      } else {
+        this.neuspjeh = true;
+      }
+    },
+    validate: function() {
+      this.blured = true;
+      if (this.validKolicina(this.kolicina)) {
+        this.dodano = true;
+        this.valid = true;
+      }
+    },
+
+    validKolicina: function(kolicina) {
+      return kolicina >= 1 && kolicina <= 20;
+    },
+
+    submit: function() {
+      this.validate();
+      if (this.valid) {
+        this.addingToCart();
+      }
+    },
+  },
 };
 </script>
+
 
 <style lang="scss" scoped>
 * {
@@ -125,5 +226,10 @@ p {
     position: center;
     padding-left: 90px;
   }
+}
+
+#kolicina{
+  padding-left: 50px;
+  padding-right: 50px;
 }
 </style>

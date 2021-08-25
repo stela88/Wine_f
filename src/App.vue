@@ -9,7 +9,9 @@
         <p class="navbar_option">Sortiraj</p>
       </router-link>
       <router-link v-if="!$route.meta.hideNavbar" to="/Kosarica">
-        <p class="navbar_option">Košarica</p>
+        <p class="navbar_option">Košarica<span class="badge badge-warning" id="lblCartCount">
+                {{ store.cartNumber }}
+              </span></p>
       </router-link>
       <img src="@/assets/red.png" class="nav_vino" v-if="!$route.meta.hideNavbar" />
     </div>
@@ -42,8 +44,24 @@
   a{
   text-decoration: none;
   }
-  
+  #lblCartCount{
+    background-color: rgb(228, 188, 188);
+  }
+
 }
 
 
 </style>
+
+<script>
+import store from "@/store.js";
+export default {
+  name: "App",
+  data() {
+    return {
+      store,
+    };
+  },
+}
+</script>
+

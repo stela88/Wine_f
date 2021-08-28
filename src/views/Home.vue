@@ -30,10 +30,6 @@ export default {
     };
   },
   async mounted() {
-
-//trenutno ne radi ali ovo je dohvat prema id-u
-    //console.log(this.id);
-    //this.cards = await Posts.getOne(this.id);
     
     fetch("http://localhost:3330/posts")
       .then((r) => {
@@ -58,48 +54,3 @@ export default {
 };
 </script>
 
-<style lang="scss">
-body {
-  background-color: #080808;
-  padding: 30px;
-  text-align: center;
-  position: center;
-}
-* {
-  box-sizing: border-box;
-}
-.homecard {
-  text-align: center;
-  position: initial;
-  color: white;
-  padding-bottom: 50px;
-}
-
-@media screen and (max-width: 992px) {
-  .col-6 {
-    flex: 50%;
-    max-width: none;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .row {
-    flex-direction: column;
-    padding-left: 50px;
-  }
-  .homecard {
-    position: inherit;
-  }
-}
-
-.vino {
-  width: 350px;
-  height: auto;
-  border-radius: 100px;
-  object-fit: cover;
-}
-
-.p {
-  margin-top: 200x;
-}
-</style>

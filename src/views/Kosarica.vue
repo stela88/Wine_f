@@ -19,7 +19,7 @@
                 :cartInfo="addingToCart"
               />
               <br />
-              <p class="text-primary mb-0" style="color: #daa520 !important">
+              <p class="text-primary mb-0" style="color: rgb(144 104 104) !important">
                 <i class="fas fa-info-circle mr-1"></i> Dodavanje u košaricu ne
                 znači da su vaša vina rezervirana. Ne čekajte dugo!
               </p>
@@ -184,7 +184,8 @@ button {
   color: white;
   font-size: 12px;
   cursor: pointer;
-  background: #daa520;
+  background: rgb(144 104 104);
+  border-color: rgb(144 104 104);
 }
 .container {
   background-color: white;

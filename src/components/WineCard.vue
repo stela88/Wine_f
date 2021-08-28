@@ -32,7 +32,7 @@
               <button
                 type="submit"
                 href="#"
-                class="btn btn-secondary mt-4 btn-sm mr-1 mb-2"
+                class="button"
                 v-bind:class="{
                   'form-control': true,
                   'is-valid': dodano && !neuspjeh,
@@ -188,6 +188,7 @@ button {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  width:78%;
   background-color: white;
   border-radius: 20px;
   border-color: white;
@@ -195,7 +196,7 @@ button {
   padding: 15px 32px;
   text-align: center;
   font-size: 16px;
-  color: #b71c1c;
+  color: rgb(144 104 104);
   margin-bottom: 40px;
 }
 
@@ -229,7 +230,8 @@ p {
 }
 
 #kolicina{
-  padding-left: 50px;
-  padding-right: 50px;
+  padding-left: 55px;
+  padding-right: 55px;
+  color:rgb(144 104 104);
 }
 </style>

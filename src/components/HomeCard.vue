@@ -20,10 +20,10 @@ export default {
 
 <style lang="scss">
 body {
-  background-color: #080808;
-  padding: 30px;
+  background-color: #161616;
   text-align: center;
   position: center;
+  padding-top: 30px;
 }
 * {
   box-sizing: border-box;
@@ -34,26 +34,8 @@ body {
   color: white;
   padding-bottom: 50px;
 }
-
-@media screen and (max-width: 992px) {
-  .col-6 {
-    flex: 50%;
-    max-width: none;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .row {
-    flex-direction: column;
-    padding-left: 50px;
-  }
-  .homecard {
-    position: inherit;
-  }
-}
-
 .vino {
-  width: 350px;
+  width: 300px;
   height: auto;
   border-radius: 100px;
   object-fit: cover;

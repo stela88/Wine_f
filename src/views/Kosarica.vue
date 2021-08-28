@@ -107,7 +107,7 @@
                   >
                 </li>
               </ul>
-              <router-link to="/checkout">
+              <router-link to="/CheckoutForm">
                 <button type="button" class="btn btn-primary btn-block">
                   Nastavak na plaćanje
                 </button></router-link

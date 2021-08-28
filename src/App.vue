@@ -25,7 +25,8 @@
 
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+
 
 #nav {
   padding: 30px;

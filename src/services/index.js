@@ -39,34 +39,31 @@ let Posts = {
     
 }
 
-let Malvazija = {
-    add(malvazija){
-        return Service.post('/malvazija', malvazija);
+let Narudzba = {
+    dodaj_narudzbu(gotova_narudzba) {
+      return Service.post('/narudzbe', gotova_narudzba);
     },
-
-    async getOne(){
-        let response = await Service.get ('malvazija')
-        let doc = response.data;
-        return {
-            logo: doc.logo,
-            ime: doc.name,
-            slika: doc.img,
-            boja: doc.color,
-            temp: doc.temp,
-            cijena: doc.price,
-            opis: doc.about,
-            posluzi: doc.serve,
-            jelo1: doc.meal1,
-            jelo2: doc.meal2,
-            jelo3: doc.meal3,
-            link1: doc.link1,
-            link2: doc.link2,
-            link3: doc.link3
-        };
-
+    // pretraga i dohvat 1 doc.
+    async getOne(id) {
+      let response = await Service.get(`/narudzbe/${id}`);
+      let doc = response.data;
+      return {
+        id: doc._id,
+        konacnaCijena: doc.konacnaCijena,
+        imeiprezime: doc.imeiprezime,
+        adresa: doc.adresa,
+        godine: doc.godine,
+        drzava: doc.drzava,
+        zupanija:doc.zupanija,
+        zip: doc.zip,
+        imeKartica: doc.imeKartica,
+        napomene: doc.napomene,
+        brojKartice: doc.brojKartice,
+        cardCV: doc.cardCV,
+        cardDatum: doc.cardDatum,
+      };
     },
-}
+   
+  };
 
-
-
-export { Service, Posts, Malvazija}
+export { Service, Posts, Narudzba}

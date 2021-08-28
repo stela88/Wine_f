@@ -314,7 +314,7 @@ export default {
         // spremanje podataka
      let gotova_narudzba = {
          
-        konacnaCijena: this.konacnaCijena,
+        konacnaCijena: this.store.konacnaCijena + this.cijenaDostave,
         imeiprezime: this.imeiprezime,
         adresa: this.adresa,
         godine: this.godine,

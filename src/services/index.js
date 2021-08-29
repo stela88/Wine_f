@@ -50,7 +50,8 @@ let Narudzba = {
       return {
         id: doc._id,
         konacnaCijena: doc.konacnaCijena,
-        imeiprezime: doc.imeiprezime,
+        naruceno_vino: doc.naruceno_vino,
+        kolicina: doc.kolicina,
         adresa: doc.adresa,
         godine: doc.godine,
         drzava: doc.drzava,

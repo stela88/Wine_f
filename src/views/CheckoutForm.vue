@@ -114,6 +114,17 @@
                 <option>Varaždinska</option>
                 <option>Koprivničko-križevačka</option>
                 <option>Bjelovarsko-bilogorska</option>
+                <option>Primorsko-goranska</option>
+                <option>Ličko-senjska</option>
+                <option>Virovitičko-podravska</option>
+                <option>Požeško-slavonska</option>
+                <option>Brodsko-posavska</option>
+                <option>Zadarska</option>
+                <option>Osiječko-baranjska</option>
+                <option>Vukovarsko-srijemska</option>
+                <option>Splitsko-dalmatinska</option>
+                <option>Istarska</option>
+                <option>Dubrovačko-neretvanska</option>
                 <option>Međimurska</option>
                 <option>Grad Zagreb</option>
               </select>
@@ -281,6 +292,7 @@
 import store from "@/store";
 import {Narudzba} from "@/services";
 import CheckoutCartItem from "@/components/CheckoutCartItem.vue";
+
 export default {
   data() {
     return {
@@ -288,6 +300,7 @@ export default {
       konacnaCijena: 0,
       blured: false,
       valid: false,
+      naruceno_vino:"",
       imeiprezime: "",
       adresa: "",
       godine: "",
@@ -316,6 +329,7 @@ export default {
          
         konacnaCijena: this.store.konacnaCijena + this.cijenaDostave,
         imeiprezime: this.imeiprezime,
+        naruceno_vino:this.store.addingToCart,
         adresa: this.adresa,
         godine: this.godine,
         drzava: this.drzava,

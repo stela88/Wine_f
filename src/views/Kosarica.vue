@@ -112,6 +112,12 @@
                   Nastavak na plaćanje
                 </button></router-link
               >
+              <br>
+              <router-link to="/Home">
+                <button type="button" class="btn btn-primary btn-block">
+                  Dodaj još vina
+                </button></router-link
+              >
               <hr class="mb-2" />
               <p class="small mb-0" style="color: #999 !important; ">
                 <i class="fas fa-info-circle mr-1"></i>

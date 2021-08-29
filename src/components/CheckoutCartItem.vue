@@ -1,7 +1,7 @@
 <template>
   <li class="list-group-item d-flex justify-content-between lh-condensed">
     <div>
-      <h6 class="my-0">{{ checkoutCartInfo.naslov }}</h6>
+      <h6 class="my-0">{{ checkoutCartInfo.ime }}</h6>
       <small class="text-muted"
         >Kolicina: {{ checkoutCartInfo.kolicina }}</small
       >

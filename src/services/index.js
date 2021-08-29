@@ -49,9 +49,9 @@ let Narudzba = {
       let doc = response.data;
       return {
         id: doc._id,
+        imeiprezime: doc.imeiprezime,
         konacnaCijena: doc.konacnaCijena,
         naruceno_vino: doc.naruceno_vino,
-        kolicina: doc.kolicina,
         adresa: doc.adresa,
         godine: doc.godine,
         drzava: doc.drzava,

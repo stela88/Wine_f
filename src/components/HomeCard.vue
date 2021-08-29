@@ -1,8 +1,8 @@
 <template>
   <div class="homecard">
-    <a :href="info.page">
+    <router-link :to="info.page">
       <img alt="homecard" :src="info.img" class="vino" />
-    </a>
+    </router-link>
     <br /><br />
     <h4>
       <p>{{ info.description }}</p>

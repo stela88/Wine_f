@@ -250,37 +250,10 @@
             class="btn btn-primary btn-lg btn-block"
             type="submit"
             :disabled="!testIspravnosti"
-            data-toggle="modal"
-            data-target="#uspjesnaNarudzba"
+            @click="alert()"
           >
             Nastavite na plaćanje
           </button>
-          <div
-            class="modal fade"
-            id="uspjesnaNarudzba"
-            tabindex="-1"
-            role="dialog"
-            aria-labelledby="uspjesnaNarudzba2"
-            aria-hidden="true"
-          >
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header justify-content-center">
-                  Vaša narudžba je uspješno provedena!
-                </div>
-                <div class="modal-body">
-                  <button
-                    type="submit"
-                    class="btn btn-primary"
-                    data-dismiss="modal"
-                    @click="redirect()"
-                  >
-                    Super!
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
       </div>
     </div>
     </form>
@@ -321,6 +294,7 @@ export default {
     CheckoutCartItem,
   },
   methods: {
+    
 
    async dodaj_narudzbu() {
     {
@@ -349,10 +323,14 @@ export default {
         this.message = 'Molim te dodaaaaj mi narudzbuuuuuuu :(';
       }
     },
-
+    
     redirect() {
       this.$router.push({ name: "Home" });
     },
+
+    alert() {
+  alert("Vaša narudžba je uspješno provedena!")
+  },
     validate: function() {
       this.blured = true;
       if (
@@ -388,6 +366,7 @@ export default {
         this.narudzbaUspjesna = true;
       }
     },
+    
   },
   computed: {
     cijenaDostave() {
@@ -414,6 +393,7 @@ export default {
     },
   },
 };
+
 </script>
 
 <style scoped>

@@ -254,6 +254,13 @@
           >
             Nastavite na plaćanje
           </button>
+          <button
+            class="btn btn-primary btn-lg btn-block"
+            type="submit"
+            @click="redirect()"
+            >
+            Povratak na home
+          </button>
       </div>
     </div>
     </form>

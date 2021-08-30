@@ -16,10 +16,10 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style>
 
 body {
-  background-color: #1d2327;
+  background-color: #161616;
 }
 h1{
     color: aliceblue;

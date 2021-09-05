@@ -29,25 +29,14 @@ export default {
       cards,
     };
   },
-  async mounted() {
-    
-    fetch("http://localhost:3330/posts")
-      .then((r) => {
-        return r.json();
-      })
-      .then((data) => {
-        console.log("Podaci s backenda", data);
-
-        this.cards = data.map((element) => {
-          return {
-            img: element.slika,
-            description: element.ime,
-            page: element.stranica,
-          };
-        });
-      });
+   created() {
+    this.fetchPosts()
   },
-
+  methods:{
+    async fetchPosts() {
+      this.cards = await Posts.getAll()
+    },
+  },
   components: {
     HomeCard,
   },

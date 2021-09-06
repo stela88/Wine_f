@@ -12,17 +12,6 @@ let Posts = {
     add(post){
         return Service.post('/posts', post);
     },
-
-    async getOne(){
-        let response = await Service.get (`/posts/${id}`)
-        let doc = response.data;
-        return {
-            img: doc.slika,
-            description: doc.ime,
-            page: doc.stranica,
-        };
-
-    },
     
     async getAll() {
         let response = await Service.get('/posts');
